@@ -16,7 +16,7 @@ import com.opencsv.enums.CSVReaderNullFieldIndicator;
  *
  * @author André Schulz
  *
- * @since DOCME add inception version number
+ * @since 0.1.0
  */
 public class CsvUtil {
 
@@ -27,7 +27,7 @@ public class CsvUtil {
 	 *            {@link String} file name
 	 * @return {@link CSVReader}
 	 * @throws IOException
-	 * @since DOCME add inception version number
+	 * @since 0.1.0
 	 */
 	public static CSVReader getCsvReader(String input) throws IOException {
 		String firstLine;
@@ -63,7 +63,7 @@ public class CsvUtil {
 	}
 
 	/**
-	 * @since DOCME add inception version number
+	 * @since 0.1.0
 	 */
 	private CsvUtil() {
 		// nothing to do

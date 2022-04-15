@@ -23,7 +23,7 @@ import de.voomdoon.util.test.tests.TestBase;
  *
  * @author André Schulz
  *
- * @since DOCME add inception version number
+ * @since 0.1.0
  */
 public class CsvUtilTest {
 
@@ -32,24 +32,24 @@ public class CsvUtilTest {
 	 *
 	 * @author André Schulz
 	 *
-	 * @since DOCME add inception version number
+	 * @since 0.1.0
 	 */
 	public static class GetCsvReader_String_Test extends TestBase {
 
 		/**
-		 * @since DOCME add inception version number
+		 * @since 0.1.0
 		 */
 		private String input;
 
 		/**
-		 * @since DOCME add inception version number
+		 * @since 0.1.0
 		 */
 		private CSVReader reader;
 
 		/**
 		 * @throws IOException
 		 * 
-		 * @since DOCME add inception version number
+		 * @since 0.1.0
 		 */
 		public GetCsvReader_String_Test() throws IOException {
 			input = getTempDirectory() + "/input.csv";
@@ -62,7 +62,7 @@ public class CsvUtilTest {
 
 		/**
 		 * @throws Exception
-		 * @since DOCME add inception version number
+		 * @since 0.1.0
 		 */
 		@Test
 		void test_empty() throws Exception {
@@ -94,7 +94,7 @@ public class CsvUtilTest {
 
 		/**
 		 * @throws Exception
-		 * @since DOCME add inception version number
+		 * @since 0.1.0
 		 */
 		@Test
 		void test_separator_semicolon() throws Exception {
@@ -105,7 +105,7 @@ public class CsvUtilTest {
 
 		/**
 		 * @throws Exception
-		 * @since DOCME add inception version number
+		 * @since 0.1.0
 		 */
 		@Test
 		void test_separator_tab() throws Exception {
@@ -120,7 +120,7 @@ public class CsvUtilTest {
 		 * @param input
 		 * @param output
 		 * @throws IOException
-		 * @since DOCME add inception version number
+		 * @since 0.1.0
 		 */
 		private void copy(InputStream input, FileOutputStream output) throws IOException {
 			IOUtils.copy(input, output);
@@ -132,7 +132,7 @@ public class CsvUtilTest {
 		 * @param input
 		 * @return
 		 * @throws IOException
-		 * @since DOCME add inception version number
+		 * @since 0.1.0
 		 */
 		private CSVReader getCsvReader(String input) throws IOException {
 			reader = CsvUtil.getCsvReader(input);
@@ -145,7 +145,7 @@ public class CsvUtilTest {
 		 * @throws IOException
 		 * @throws FileNotFoundException
 		 * @throws CsvValidationException
-		 * @since DOCME add inception version number
+		 * @since 0.1.0
 		 */
 		private void runSeparatorTest(String string) throws FileNotFoundException, IOException, CsvValidationException {
 			copy(CsvUtilTest.class.getResourceAsStream("/csv/" + string + ".csv"), new FileOutputStream(input));
