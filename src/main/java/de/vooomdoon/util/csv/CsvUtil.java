@@ -11,6 +11,8 @@ import com.opencsv.CSVReader;
 import com.opencsv.CSVReaderBuilder;
 import com.opencsv.enums.CSVReaderNullFieldIndicator;
 
+import lombok.experimental.UtilityClass;
+
 /**
  * Utility for CSV.
  *
@@ -18,6 +20,7 @@ import com.opencsv.enums.CSVReaderNullFieldIndicator;
  *
  * @since 0.1.0
  */
+@UtilityClass
 public class CsvUtil {
 
 	/**
@@ -60,12 +63,5 @@ public class CsvUtil {
 				.withSeparator(separator)//
 				.withFieldAsNull(CSVReaderNullFieldIndicator.EMPTY_SEPARATORS)//
 				.build()).build();
-	}
-
-	/**
-	 * @since 0.1.0
-	 */
-	private CsvUtil() {
-		// nothing to do
 	}
 }

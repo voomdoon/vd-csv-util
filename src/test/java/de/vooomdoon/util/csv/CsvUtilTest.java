@@ -34,7 +34,7 @@ public class CsvUtilTest {
 	 *
 	 * @since 0.1.0
 	 */
-	public static class GetCsvReader_String_Test extends TestBase {
+	static class GetCsvReader_String_Test extends TestBase {
 
 		/**
 		 * @since 0.1.0
@@ -152,7 +152,6 @@ public class CsvUtilTest {
 
 			CSVReader actual = getCsvReader(input);
 			assertThat(actual.readNext()).isEqualTo(new String[] { "a", "b" });
-
 		}
 	}
 }
