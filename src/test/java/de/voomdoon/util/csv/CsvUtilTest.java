@@ -1,4 +1,4 @@
-package de.vooomdoon.util.csv;
+package de.voomdoon.util.csv;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertThrows;
@@ -16,7 +16,8 @@ import org.junit.jupiter.api.Test;
 import com.opencsv.CSVReader;
 import com.opencsv.exceptions.CsvValidationException;
 
-import de.voomdoon.util.test.tests.TestBase;
+import de.voomdoon.util.csv.CsvUtil;
+import de.voomdoon.testing.tests.TestBase
 
 /**
  * Test class for {@link CsvUtil}

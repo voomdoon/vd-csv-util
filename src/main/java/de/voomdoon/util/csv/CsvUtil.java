@@ -1,4 +1,4 @@
-package de.vooomdoon.util.csv;
+package de.voomdoon.util.csv;
 
 import java.io.File;
 import java.io.FileReader;
