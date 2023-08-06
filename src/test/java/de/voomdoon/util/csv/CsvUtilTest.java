@@ -7,7 +7,6 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.InputStream;
 
 import org.apache.commons.io.IOUtils;
 import org.junit.jupiter.api.AfterEach;
@@ -16,8 +15,8 @@ import org.junit.jupiter.api.Test;
 import com.opencsv.CSVReader;
 import com.opencsv.exceptions.CsvValidationException;
 
-import de.voomdoon.util.csv.CsvUtil;
-import de.voomdoon.testing.tests.TestBase
+import de.voomdoon.testing.tests.TestBase;
+import de.voomdoon.util.io.IOStreamUtil;
 
 /**
  * Test class for {@link CsvUtil}
@@ -69,7 +68,7 @@ public class CsvUtilTest {
 		void test_empty() throws Exception {
 			logTestStart();
 
-			copy(CsvUtilTest.class.getResourceAsStream("/csv/empty.csv"), new FileOutputStream(input));
+			IOStreamUtil.copy(CsvUtilTest.class.getResourceAsStream("/csv/empty.csv"), new FileOutputStream(input));
 
 			CSVReader actual = getCsvReader(input);
 			assertThat(actual).isNotNull();
@@ -116,20 +115,6 @@ public class CsvUtilTest {
 		}
 
 		/**
-		 * DOCME add JavaDoc for method copy
-		 * 
-		 * @param input
-		 * @param output
-		 * @throws IOException
-		 * @since 0.1.0
-		 */
-		private void copy(InputStream input, FileOutputStream output) throws IOException {
-			IOUtils.copy(input, output);
-			input.close();
-			output.close();
-		}
-
-		/**
 		 * @param input
 		 * @return
 		 * @throws IOException
@@ -149,7 +134,8 @@ public class CsvUtilTest {
 		 * @since 0.1.0
 		 */
 		private void runSeparatorTest(String string) throws FileNotFoundException, IOException, CsvValidationException {
-			copy(CsvUtilTest.class.getResourceAsStream("/csv/" + string + ".csv"), new FileOutputStream(input));
+			IOStreamUtil.copy(CsvUtilTest.class.getResourceAsStream("/csv/" + string + ".csv"),
+					new FileOutputStream(input));
 
 			CSVReader actual = getCsvReader(input);
 			assertThat(actual.readNext()).isEqualTo(new String[] { "a", "b" });
