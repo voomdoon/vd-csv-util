@@ -34,7 +34,7 @@ public class CsvUtilTest {
 	 *
 	 * @since 0.1.0
 	 */
-	static class GetCsvReader_String_Test extends TestBase {
+	class GetCsvReader_String_Test extends TestBase {
 
 		/**
 		 * @since 0.1.0
