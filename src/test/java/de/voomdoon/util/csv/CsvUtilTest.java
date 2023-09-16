@@ -10,6 +10,7 @@ import java.io.IOException;
 
 import org.apache.commons.io.IOUtils;
 import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 
 import com.opencsv.CSVReader;
@@ -34,6 +35,7 @@ public class CsvUtilTest {
 	 *
 	 * @since 0.1.0
 	 */
+	@Nested
 	class GetCsvReader_String_Test extends TestBase {
 
 		/**
