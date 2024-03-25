@@ -34,9 +34,11 @@ public class CsvUtilTest {
 	 * @author André Schulz
 	 *
 	 * @since 0.1.0
+	 * @deprecated
 	 */
+	@Deprecated(forRemoval = true)
 	@Nested
-	class GetCsvReader_String_Test extends TestBase {
+	class GetOpenCsvReader_String_Test extends TestBase {
 
 		/**
 		 * @since 0.1.0
@@ -53,7 +55,7 @@ public class CsvUtilTest {
 		 * 
 		 * @since 0.1.0
 		 */
-		public GetCsvReader_String_Test() throws IOException {
+		public GetOpenCsvReader_String_Test() throws IOException {
 			input = getTempDirectory() + "/input.csv";
 		}
 
@@ -84,14 +86,14 @@ public class CsvUtilTest {
 			directory.mkdir();
 			String input = directory.toString();
 
-			assertThrows(IllegalArgumentException.class, () -> CsvUtil.getCsvReader(input));
+			assertThrows(IllegalArgumentException.class, () -> CsvUtil.getOpenCsvCsvReader(input));
 		}
 
 		@Test
 		void test_error_IOException_fileNotFound() throws Exception {
 			logTestStart();
 
-			assertThrows(IOException.class, () -> CsvUtil.getCsvReader("something"));
+			assertThrows(IOException.class, () -> CsvUtil.getOpenCsvCsvReader("something"));
 		}
 
 		/**
@@ -123,7 +125,7 @@ public class CsvUtilTest {
 		 * @since 0.1.0
 		 */
 		private CSVReader getCsvReader(String input) throws IOException {
-			reader = CsvUtil.getCsvReader(input);
+			reader = CsvUtil.getOpenCsvCsvReader(input);
 
 			return reader;
 		}

@@ -11,6 +11,7 @@ import com.opencsv.CSVReader;
 import com.opencsv.CSVReaderBuilder;
 import com.opencsv.enums.CSVReaderNullFieldIndicator;
 
+import de.voomdoon.util.csv.reader.CsvReaderBuilder;
 import lombok.experimental.UtilityClass;
 
 /**
@@ -31,8 +32,10 @@ public class CsvUtil {
 	 * @return {@link CSVReader}
 	 * @throws IOException
 	 * @since 0.1.0
+	 * @deprecated use {@link CsvReaderBuilder}
 	 */
-	public static CSVReader getCsvReader(String input) throws IOException {
+	@Deprecated(forRemoval = true)
+	public static CSVReader getOpenCsvCsvReader(String input) throws IOException {
 		String firstLine;
 
 		try {
