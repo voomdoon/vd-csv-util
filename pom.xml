@@ -14,9 +14,7 @@
 
 	<dependencies>
 		<!-- + + + + + + + + + + compile dependencies + + + + + + + + + + -->
-		<!-- + + + + + internal voomdoon dependencies + + + + + -->
-
-		<!-- + + + + + external dependencies + + + + + -->
+		<!-- + + + + + external compile dependencies + + + + + -->
 		<dependency>
 			<groupId>com.opencsv</groupId>
 			<artifactId>opencsv</artifactId>
@@ -27,6 +25,7 @@
 			<artifactId>lombok</artifactId>
 			<version>1.18.32</version>
 		</dependency>
+		<!-- - - - - - external compile dependencies - - - - - -->
 		<!-- - - - - - - - - - - compile dependencies - - - - - - - - - - -->
 
 		<!-- + + + + + + + + + + test dependencies + + + + + + + + + + -->
