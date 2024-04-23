@@ -21,6 +21,25 @@ class DefaultCsvWriterTest extends CsvWriterTest {
 	 * @since 0.1.0
 	 */
 	@Nested
+	class FlushTest extends CsvWriterTest.FlushTest {
+
+		/**
+		 * @since 0.1.0
+		 */
+		@Override
+		CsvWriter getInstance(String fileName) throws IOException {
+			return new DefaultCsvWriter(fileName);
+		}
+	}
+
+	/**
+	 * DOCME add JavaDoc for DefaultCsvWriterTest
+	 *
+	 * @author André Schulz
+	 *
+	 * @since 0.1.0
+	 */
+	@Nested
 	class WriteRow_List_Test extends CsvWriterTest.WriteRow_List_Test {
 
 		/**

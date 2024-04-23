@@ -38,7 +38,22 @@ class DefaultCsvWriter implements CsvWriter {
 	 */
 	@Override
 	public void close() throws IOException {
-		writer.close();
+		try {
+			writer.close();
+		} catch (IOException e) {
+			if (!"Stream closed".equals(e.getMessage())) {
+				throw e;
+			}
+		}
+	}
+
+	/**
+	 * @throws IOException
+	 * @since 0.1.0
+	 */
+	@Override
+	public void flush() throws IOException {
+		writer.flush();
 	}
 
 	/**

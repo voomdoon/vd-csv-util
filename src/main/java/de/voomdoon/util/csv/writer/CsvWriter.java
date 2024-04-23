@@ -14,6 +14,14 @@ import java.util.List;
 public interface CsvWriter extends Closeable {
 
 	/**
+	 * DOCME add JavaDoc for method flush
+	 * 
+	 * @throws IOException
+	 * @since 0.1.0
+	 */
+	void flush() throws IOException;
+
+	/**
 	 * DOCME add JavaDoc for method writeRow
 	 * 
 	 * @param row
