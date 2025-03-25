@@ -4,6 +4,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
+import java.io.IOException;
+
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 
@@ -32,10 +34,11 @@ class CsvAssertTest extends TestBase {
 	class AssertColumns_Test extends TestBase {
 
 		/**
+		 * @throws IOException
 		 * @since 0.1.0
 		 */
 		@Test
-		void test_1column() {
+		void test_1column() throws IOException {
 			logTestStart();
 
 			CsvAssert asserter = CsvAssert.assertCsv("src/test/resources/csv/tab.csv");
@@ -44,10 +47,11 @@ class CsvAssertTest extends TestBase {
 		}
 
 		/**
+		 * @throws IOException
 		 * @since 0.1.0
 		 */
 		@Test
-		void test_2columns() {
+		void test_2columns() throws IOException {
 			logTestStart();
 
 			CsvAssert asserter = CsvAssert.assertCsv("src/test/resources/csv/tab.csv");
@@ -56,10 +60,11 @@ class CsvAssertTest extends TestBase {
 		}
 
 		/**
+		 * @throws IOException
 		 * @since 0.1.0
 		 */
 		@Test
-		void test_AssertionError_missing() {
+		void test_AssertionError_missing() throws IOException {
 			logTestStart();
 
 			CsvAssert asserter = CsvAssert.assertCsv("src/test/resources/csv/tab.csv");
@@ -71,10 +76,11 @@ class CsvAssertTest extends TestBase {
 		}
 
 		/**
+		 * @throws IOException
 		 * @since 0.1.0
 		 */
 		@Test
-		void test_columnOrderDoesNotMatter() {
+		void test_columnOrderDoesNotMatter() throws IOException {
 			logTestStart();
 
 			CsvAssert asserter = CsvAssert.assertCsv("src/test/resources/csv/tab.csv");

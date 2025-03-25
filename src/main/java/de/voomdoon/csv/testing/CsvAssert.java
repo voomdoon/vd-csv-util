@@ -33,9 +33,10 @@ public class CsvAssert {
 	 * 
 	 * @param fileName
 	 * @return
+	 * @throws IOException
 	 * @since 0.1.0
 	 */
-	public static CsvAssert assertCsv(String fileName) {
+	public static CsvAssert assertCsv(String fileName) throws IOException {
 		return new CsvAssert(fileName);
 	}
 
@@ -59,32 +60,28 @@ public class CsvAssert {
 	 * DOCME add JavaDoc for constructor CsvAssert
 	 * 
 	 * @param fileName
+	 * @throws IOException
 	 * @since 0.1.0
 	 */
-	public CsvAssert(String fileName) {
-		try {
-			try (CsvReader reader = new CsvReaderBuilder(fileName).build()) {
-				String[] headline = null;
-				String[] row;
-				int rowCount = 0;
+	public CsvAssert(String fileName) throws IOException {
+		try (CsvReader reader = new CsvReaderBuilder(fileName).build()) {
+			String[] headline = null;
+			String[] row;
+			int rowCount = 0;
 
-				while ((row = reader.readRowAsArray()) != null) {
-					if (headline == null) {
-						headline = row;
-					} else {
-						if (headline.length != row.length) {
-							throw new AssertionError("Invalid CSV: Row " + rowCount + " has " + row.length
-									+ " columns, but expecting " + headline.length + "!");
-						}
+			while ((row = reader.readRowAsArray()) != null) {
+				if (headline == null) {
+					headline = row;
+				} else {
+					if (headline.length != row.length) {
+						throw new AssertionError("Invalid CSV: Row " + rowCount + " has " + row.length
+								+ " columns, but expecting " + headline.length + "!");
 					}
-
-					rowCount++;
-					rows.add(row);
 				}
+
+				rowCount++;
+				rows.add(row);
 			}
-		} catch (IOException e) {
-			// TODO implement error handling
-			throw new RuntimeException("Error at 'CsvAssert': " + e.getMessage(), e);
 		}
 	}
 
