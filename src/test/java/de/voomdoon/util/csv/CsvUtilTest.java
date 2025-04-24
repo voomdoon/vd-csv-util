@@ -20,7 +20,7 @@ import de.voomdoon.testing.tests.TestBase;
 import de.voomdoon.util.io.IOStreamUtil;
 
 /**
- * Test class for {@link CsvUtil}
+ * Tests for {@link CsvUtil}
  *
  * @author André Schulz
  *
