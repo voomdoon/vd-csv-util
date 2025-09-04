@@ -9,7 +9,10 @@ import java.util.List;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
+import de.voomdoon.testing.file.TempFileExtension;
+import de.voomdoon.testing.file.TempOutputFile;
 import de.voomdoon.testing.tests.TestBase;
 
 /**
@@ -19,6 +22,7 @@ import de.voomdoon.testing.tests.TestBase;
  *
  * @since 0.1.0
  */
+@ExtendWith(TempFileExtension.class)
 class CsvWriterTest {
 
 	/**
@@ -84,16 +88,15 @@ class CsvWriterTest {
 		 * @since 0.1.0
 		 */
 		@Test
-		void test() throws Exception {
+		void test(@TempOutputFile String file) throws Exception {
 			logTestStart();
 
-			String output = getTempDirectory() + "/output.csv";
-			CsvWriter instance = get(output);
+			CsvWriter instance = get(file);
 
 			instance.writeRow(List.of("a", "b"));
 			instance.flush();
 
-			List<String> lines = Files.readAllLines(Path.of(output));
+			List<String> lines = Files.readAllLines(Path.of(file));
 
 			assertThat(lines).containsExactly("a\tb");
 		}
@@ -112,17 +115,16 @@ class CsvWriterTest {
 		 * @since 0.1.0
 		 */
 		@Test
-		void test() throws Exception {
+		void test(@TempOutputFile String file) throws Exception {
 			logTestStart();
 
-			String output = getTempDirectory() + "/output.csv";
-			CsvWriter instance = get(output);
+			CsvWriter instance = get(file);
 
 			instance.writeRow(List.of("a", "b"));
 
 			instance.close();
 
-			List<String> lines = Files.readAllLines(Path.of(output));
+			List<String> lines = Files.readAllLines(Path.of(file));
 
 			assertThat(lines).containsExactly("a\tb");
 		}
