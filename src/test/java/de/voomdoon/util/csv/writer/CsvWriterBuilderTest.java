@@ -6,7 +6,10 @@ import java.io.IOException;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
+import de.voomdoon.testing.file.TempFileExtension;
+import de.voomdoon.testing.file.TempOutputFile;
 import de.voomdoon.testing.tests.TestBase;
 
 /**
@@ -16,6 +19,7 @@ import de.voomdoon.testing.tests.TestBase;
  *
  * @since 0.1.0
  */
+@ExtendWith(TempFileExtension.class)
 class CsvWriterBuilderTest extends TestBase {
 
 	/**
@@ -42,10 +46,10 @@ class CsvWriterBuilderTest extends TestBase {
 	 * @since 0.1.0
 	 */
 	@Test
-	void testBuild() throws Exception {
+	void testBuild(@TempOutputFile String file) throws Exception {
 		logTestStart();
 
-		builder = new CsvWriterBuilder(getTempDirectory() + "/output.csv");
+		builder = new CsvWriterBuilder(file);
 
 		CsvWriter actual = build();
 
