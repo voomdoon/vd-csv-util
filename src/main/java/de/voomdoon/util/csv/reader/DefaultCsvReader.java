@@ -25,10 +25,12 @@ public class DefaultCsvReader implements CsvReader {
 	private CSVReader reader;
 
 	/**
-	 * DOCME add JavaDoc for constructor DefaultCsvReader
+	 * Opens the supplied file as tab-separated CSV.
 	 * 
 	 * @param fileName
+	 *            file name as {@link String}
 	 * @throws IOException
+	 *             if the file cannot be opened
 	 * @since 0.1.0
 	 */
 	public DefaultCsvReader(String fileName) throws IOException {
@@ -50,8 +52,6 @@ public class DefaultCsvReader implements CsvReader {
 	}
 
 	/**
-	 * @throws IOException
-	 * @throws
 	 * @since 0.1.0
 	 */
 	@Override

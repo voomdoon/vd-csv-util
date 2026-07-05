@@ -8,7 +8,7 @@ import de.voomdoon.util.csv.reader.CsvReader;
 import de.voomdoon.util.csv.reader.CsvReaderBuilder;
 
 /**
- * DOCME add JavaDoc for
+ * Assertions for tab-separated CSV files.
  *
  * @author André Schulz
  *
@@ -19,8 +19,12 @@ import de.voomdoon.util.csv.reader.CsvReaderBuilder;
 public class CsvAssert {
 
 	/**
+	 * Expected values of a CSV column.
 	 *
 	 * @author André Schulz
+	 *
+	 * @param cells
+	 *            expected cells
 	 *
 	 * @since 0.1.0
 	 */
@@ -29,11 +33,13 @@ public class CsvAssert {
 	}
 
 	/**
-	 * DOCME add JavaDoc for method assertCsv
+	 * Creates assertions for a CSV file.
 	 * 
 	 * @param fileName
-	 * @return
+	 *            file to read
+	 * @return assertions for the file
 	 * @throws IOException
+	 *             if the file cannot be read
 	 * @since 0.1.0
 	 */
 	public static CsvAssert assertCsv(String fileName) throws IOException {
@@ -41,10 +47,11 @@ public class CsvAssert {
 	}
 
 	/**
-	 * DOCME add JavaDoc for method column
+	 * Creates an expected column.
 	 * 
 	 * @param cells
-	 * @return
+	 *            expected cells
+	 * @return expected column
 	 * @since 0.1.0
 	 */
 	public static Column column(String... cells) {
@@ -57,10 +64,12 @@ public class CsvAssert {
 	private final List<String[]> rows = new ArrayList<>();
 
 	/**
-	 * DOCME add JavaDoc for constructor CsvAssert
+	 * Reads a CSV file for subsequent assertions.
 	 * 
 	 * @param fileName
+	 *            file to read
 	 * @throws IOException
+	 *             if the file cannot be read
 	 * @since 0.1.0
 	 */
 	public CsvAssert(String fileName) throws IOException {
@@ -86,9 +95,10 @@ public class CsvAssert {
 	}
 
 	/**
-	 * DOCME add JavaDoc for method assertColumns
+	 * Asserts that all supplied columns exist.
 	 * 
 	 * @param columns
+	 *            expected columns
 	 * @since 0.1.0
 	 */
 	public void assertColumns(Column... columns) {

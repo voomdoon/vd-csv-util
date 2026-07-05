@@ -17,9 +17,10 @@ public class CsvWriterBuilder {
 	private String fileName;
 
 	/**
-	 * DOCME add JavaDoc for constructor CsvWriterBuilder
+	 * Creates a builder for the supplied file.
 	 * 
-	 * @param string
+	 * @param fileName
+	 *            file name as {@link String}
 	 * @since 0.1.0
 	 */
 	public CsvWriterBuilder(String fileName) {
@@ -27,10 +28,11 @@ public class CsvWriterBuilder {
 	}
 
 	/**
-	 * DOCME add JavaDoc for method build
+	 * Builds the CSV writer.
 	 * 
-	 * @return
+	 * @return {@link CsvWriter}
 	 * @throws IOException
+	 *             if the writer cannot be created
 	 * @since 0.1.0
 	 */
 	public CsvWriter build() throws IOException {
