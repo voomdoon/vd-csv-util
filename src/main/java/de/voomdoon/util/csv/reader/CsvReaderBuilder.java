@@ -17,9 +17,10 @@ public class CsvReaderBuilder {
 	private String fileName;
 
 	/**
-	 * DOCME add JavaDoc for constructor CsvReaderBuilder
+	 * Creates a builder for the supplied file.
 	 * 
 	 * @param fileName
+	 *            file name as {@link String}
 	 * @since 0.1.0
 	 */
 	public CsvReaderBuilder(String fileName) {
@@ -27,10 +28,11 @@ public class CsvReaderBuilder {
 	}
 
 	/**
-	 * DOCME add JavaDoc for method build
+	 * Builds the CSV reader.
 	 * 
-	 * @return
+	 * @return {@link CsvReader}
 	 * @throws IOException
+	 *             if the reader cannot be created
 	 * 
 	 * @since 0.1.0
 	 */

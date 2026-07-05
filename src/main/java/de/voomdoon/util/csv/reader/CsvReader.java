@@ -13,10 +13,11 @@ import java.io.IOException;
 public interface CsvReader extends Closeable {
 
 	/**
-	 * DOCME add JavaDoc for method readRowArray
+	 * Reads the next row.
 	 * 
-	 * @return
+	 * @return next row or {@code null} at the end of the input
 	 * @throws IOException
+	 *             if the row cannot be read
 	 * @since 0.1.0
 	 */
 	String[] readRowAsArray() throws IOException;
